@@ -1,7 +1,7 @@
  define(function (require) {
 var Backbone    = require('backbone'),
     Handlebars  = require('handlebars'),
-    Templates   = require('Templates')
+    Templates   = require('Templates');
 
     var BaseView = Backbone.View.extend({
         containerSelector :  '#content',
@@ -50,6 +50,8 @@ var Backbone    = require('backbone'),
          BaseView.prototype.initialize.call(this)
         },
         doSomething : function () {
+          console.log(this.router)
+          this.router.navigate('/bar/someparam');
          alert("something");
         }
 

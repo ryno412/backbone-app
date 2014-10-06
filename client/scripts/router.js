@@ -3,6 +3,7 @@ define(function (require){
     var _ = require('underscore');
     var views = require('views');
     var $ = require('jquery');
+
     var AppRouter = Backbone.Router.extend({
         routes: {
             "" : "index",
@@ -20,6 +21,7 @@ define(function (require){
             if (!(this.currentView instanceof View)) {
                 if (this.currentView) this.currentView.remove();
                 this.currentView = new View();
+                this.currentView.router = this;
             }
             this.currentView.render();
             return this.currentView;

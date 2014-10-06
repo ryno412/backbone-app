@@ -2,7 +2,11 @@ require.config({
     baseUrl: "./scripts/js/",
     //shim is used for libs that don't use amd module style
     shim: {
+        jquery : {
+            exports : '$'
+        },
         underscore: {
+            deps:["jquery"],
             exports: '_'
         },
         backbone: {
@@ -11,9 +15,6 @@ require.config({
         },
         handlebars : {
             exports : 'Handlebars'
-        },
-        jquery : {
-            exports : '$'
         },
         bootstrap : {
             exports : 'bootstrap'
@@ -34,6 +35,7 @@ require.config({
 define(function (require){
     var app = require('app');
     var $ = require('jquery');
+    var router = require('router');
     var bootstrap = require('bootstrap');
     $(document).ready(function ($) {
         app.init();
