@@ -2,17 +2,11 @@ Setup
 
 1.install node.js
 
-2.install mongodb ..*mac ..*brew update ..* brew install mongodb
+2.run npm install
 
-3.clone reopo
+3.run bower install
 
-4.run npm install
-
-5.run bower update
-
-6.run mongod  (local persistence is currently disabled so this is not needed)
-
-7.run grunt server
+4.run grunt server
 
 go to localhost:3000
 
