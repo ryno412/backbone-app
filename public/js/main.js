@@ -14918,9 +14918,13 @@ var Backbone    = require('backbone'),
          BaseView.prototype.initialize.call(this)
         },
         doSomething : function () {
-          console.log(this.router)
-          this.router.navigate('/bar/someparam');
-         alert("something");
+          var obj = {
+              0 : {
+                  x : 10,
+                  y : 11
+              }
+          }
+          this.router.navigate('/page/'+ JSON.stringify(obj));
         }
 
     });
@@ -14938,12 +14942,14 @@ define('router',['require','backbone','underscore','views','jquery'],function (r
     var AppRouter = Backbone.Router.extend({
         routes: {
             "" : "index",
-            "page": "page"
+            "page(/:param)": "page"
+
         },
         index: function(query, page) {
             this.setCurrentView('IndexView');
         },
         page: function(query, page) {
+            console.log(query, page);
             this.setCurrentView('PageView');
         },
         setCurrentView : function (viewName) {

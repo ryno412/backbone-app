@@ -38,8 +38,7 @@ if (env === 'production') {
 /* client side routes -  just catch everything and let the backbone router take care of it*/
 
 app.route('/*').all().get(function (req, res) {
-        var name = (req.user && req.user.id) ? req.user.id : "";
-        res.render('index', {layout:false, name:name});
+        res.render('index', {layout:false});
 });
 
 app.listen(app.get('port'), function(){

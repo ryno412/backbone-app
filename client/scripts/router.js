@@ -7,12 +7,14 @@ define(function (require){
     var AppRouter = Backbone.Router.extend({
         routes: {
             "" : "index",
-            "page": "page"
+            "page(/:param)": "page"
+
         },
         index: function(query, page) {
             this.setCurrentView('IndexView');
         },
         page: function(query, page) {
+            console.log(query, page);
             this.setCurrentView('PageView');
         },
         setCurrentView : function (viewName) {

@@ -50,9 +50,13 @@ var Backbone    = require('backbone'),
          BaseView.prototype.initialize.call(this)
         },
         doSomething : function () {
-          console.log(this.router)
-          this.router.navigate('/bar/someparam');
-         alert("something");
+          var obj = {
+              0 : {
+                  x : 10,
+                  y : 11
+              }
+          }
+          this.router.navigate('/page/'+ JSON.stringify(obj));
         }
 
     });
